@@ -1,0 +1,31 @@
+Package: airHealth
+Title: My First R Package for Air Quality Analysis
+Version: 0.0.1
+Authors@R: 
+    person("İbrahim Oğuz", "Asan", 
+           email = "210527007@stu.istinye.edu.tr",
+           role = c("aut", "cre", "ctb"),
+           comment = c(ORCID = "Student ID: 2409111083"))
+Author: İbrahim Oğuz Asan [aut, cre, ctb]
+Maintainer: İbrahim Oğuz Asan <210527007@stu.istinye.edu.tr>
+Description: This is my first R package project for the SWE005 - Multivariate Statistical Analysis with R course. 
+    It provides tools for analyzing air quality data and calculating health impacts. 
+    The package includes functions for calculating Air Quality Index (AQI), 
+    assessing health impacts, and creating visualizations.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Imports: 
+    dplyr,
+    ggplot2,
+    tidyr,
+    tibble
+Suggests: 
+    testthat (>= 3.0.0),
+    knitr
+Config/testthat/edition: 3
+VignetteBuilder: knitr
+Depends: 
+    R (>= 3.5)
+LazyData: true

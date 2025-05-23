@@ -1,0 +1,134 @@
+---
+title: "Introduction to airHealth"
+author: "İbrahim Oğuz Asan"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction to airHealth}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Introduction
+
+The `airHealth` package provides tools for analyzing air pollution data and its health impacts. This vignette demonstrates the main features and functionality of the package.
+
+## Installation
+
+```{r install, eval = FALSE}
+# Install from GitHub
+devtools::install_github("yourusername/airHealth")
+```
+
+## Air Quality Analysis
+
+### Calculating Air Quality Index (AQI)
+
+The package provides functions to calculate AQI based on multiple pollutants:
+
+```{r aqi_example}
+library(airHealth)
+
+# Example data
+pm25 <- c(12, 35, 55, 150, 250)
+pm10 <- c(54, 154, 254, 354, 424)
+o3 <- c(54, 70, 85, 105, 200)
+no2 <- c(53, 100, 360, 649, 1249)
+
+# Calculate AQI
+aqi_results <- calculate_aqi(pm25, pm10, o3, no2)
+print(aqi_results)
+```
+
+### Health Impact Assessment
+
+We can estimate health impacts based on AQI and population data:
+
+```{r health_impact}
+# Example data
+population <- 100000
+exposure_hours <- 24
+
+# Calculate health impact
+health_impact <- calculate_health_impact(aqi_results$AQI)
+print(health_impact)
+```
+
+### Respiratory Health Effects
+
+The package can estimate respiratory health effects from air pollution:
+
+```{r respiratory}
+# Estimate respiratory effects
+population <- 100000
+respiratory_effects <- estimate_respiratory_effects(pm25, pm10, population)
+print(respiratory_effects)
+```
+
+## Visualization
+
+### AQI Trends
+
+```{r aqi_plot}
+# Create example time series data
+aqi_data <- data.frame(
+  date = seq.Date(from = as.Date("2024-01-01"), by = "day", length.out = 10),
+  AQI = c(50, 100, 150, 200, 300, 250, 200, 150, 100, 50)
+)
+
+# Plot AQI trend
+plot_aqi_trend(aqi_data, "date")
+```
+
+### Health Impact Visualization
+
+```{r health_plot}
+# Create example health impact data
+health_data <- data.frame(
+  Category = c("Low", "Moderate", "High", "Very High", "Extreme"),
+  Health_Impact_Score = c(500, 2500, 7500, 25000, 75000)
+)
+
+# Plot health impact
+plot_health_impact(health_data)
+```
+
+### Correlation Analysis
+
+```{r correlation}
+# Create example correlation data
+set.seed(123)
+air_quality_data <- data.frame(
+  PM2.5 = rnorm(100),
+  PM10 = rnorm(100),
+  O3 = rnorm(100),
+  NO2 = rnorm(100),
+  Health_Score = rnorm(100)
+)
+
+# Plot correlation heatmap
+plot_correlation_heatmap(air_quality_data)
+```
+
+## Best Practices
+
+When using the package, consider the following best practices:
+
+1. Always validate your input data before analysis
+2. Use appropriate units for pollutant concentrations
+3. Consider local air quality standards and guidelines
+4. Account for population demographics in health impact assessments
+5. Regularly update your data sources
+
+## References
+
+1. US EPA Air Quality Index (AQI) Basics
+2. World Health Organization Air Quality Guidelines
+3. Global Burden of Disease Study 

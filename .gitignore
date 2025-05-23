@@ -1,0 +1,29 @@
+# R specific files
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+# Generated documentation
+docs/*.docx
+docs/*.pdf
+
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows system files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# R package specific
+*.tar.gz
+*.zip
+.Rcheck/
+.Rbuildignore
+
+# Temporary files
+*.swp
+*~ 
