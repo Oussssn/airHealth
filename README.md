@@ -87,7 +87,7 @@ This project taught me so much about:
 
 ## Contact
 
-Feel free to reach out to me at 210527007@stu.istinye.edu.tr if you have any questions or suggestions!
+Feel free to reach out to me at 210527007@stu.istinye.edu.tr or oguzassn@gmail.com if you have any questions or suggestions!
 
 ## License
 
